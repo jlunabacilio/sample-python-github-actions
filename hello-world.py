@@ -3,8 +3,8 @@ from requests.auth import HTTPBasicAuth
 import json
 import os
 
-JIRA_USR = os.environ["CI_JIRA_USR"]
-JIRA_API_TKN = os.environ["CI_JIRA_API_TKN"]
+JIRA_USR = os.getenv("CI_JIRA_USR")
+JIRA_API_TKN = os.getenv("CI_JIRA_API_TKN")
 
 url = "https://aeromexico.atlassian.net/rest/api/3/issue/"+ "PERS0-64"
 
