@@ -8,7 +8,6 @@ on:
 env:
   JIRA_USR: ${{ secrets.CI_JIRA_USR }}
   JIRA_API_TKN: ${{ secrets.CI_JIRA_API_TKN }}
-  
 
 jobs:
   script-run:
