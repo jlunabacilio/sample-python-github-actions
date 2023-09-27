@@ -1,7 +1,25 @@
-import os
-import json
 import requests
 from requests.auth import HTTPBasicAuth
-import pandas as pd
+import json
+import os
 
-print('hello world')
+JIRA_USR = os.environ.get("CI_JIRA_USR")
+JIRA_API_TKN = os.environ.get("CI_JIRA_API_TKN")
+
+url = "https://aeromexico.atlassian.net/rest/api/3/issue/"+ "PERS0-64"
+
+auth = HTTPBasicAuth(JIRA_USR, JIRA_API_TKN)
+
+headers = {
+  "Accept": "application/json"
+}
+
+response = requests.request(
+   "GET",
+   url,
+   headers=headers,
+   auth=auth
+)
+
+issue = response.status_code
+print(issue)

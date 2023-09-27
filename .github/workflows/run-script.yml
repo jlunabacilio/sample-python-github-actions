@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '20 16,20,23 * * 1-5'
+
+env:
+  JIRA_USR: ${{ secrets.CI_JIRA_USR }}
+  JIRA_API_TKN: ${{ secrets.CI_JIRA_API_TKN }}
   
 
 jobs:
